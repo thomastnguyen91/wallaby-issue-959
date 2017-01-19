@@ -1,10 +1,18 @@
-module.exports = function () {
+const path = require('path');
+
+module.exports = function (wallaby) {
+
+  process.env.NODE_PATH += path.delimiter + path.join(wallaby.projectCacheDir, 'packages');
+
   return {
     files: [
       {
         pattern: "packages/**",
       },
-
+      {
+        pattern: "packages/**/node_modules/**",
+        ignore: true
+      },
       {
         pattern: "packages/**/__tests__/**",
         ignore: true
@@ -15,9 +23,8 @@ module.exports = function () {
       {
         pattern: "packages/**/__tests__/**",
       },
-
       {
-        pattern: "packages/**/node_modules/**/__tests__/**",
+        pattern: "packages/**/node_modules/**",
         ignore: true
       }
     ],
