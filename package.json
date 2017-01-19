@@ -2,6 +2,7 @@
   "name": "wallaby-issue-959",
   "version": "0.0.1",
   "devDependencies": {
+    "@types/jasmine": "^2.5.41",
     "jasmine": "^2.5.3",
     "lerna": "2.0.0-beta.30"
   }
